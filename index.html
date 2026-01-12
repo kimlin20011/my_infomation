@@ -52,6 +52,23 @@
             padding: 40px 30px;
             text-align: center;
             animation: fadeInUp 0.8s ease;
+            position: relative;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            margin: 0 auto 20px;
+            object-fit: cover;
+            animation: scaleIn 0.8s ease;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
         }
 
         .header h1 {
@@ -386,6 +403,11 @@
         }
 
         @media (max-width: 768px) {
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
             .header h1 {
                 font-size: 28px;
             }
@@ -474,6 +496,7 @@
 <body>
     <div class="container">
         <div class="header">
+            <img src="icon/fujisan.jpg" alt="Chun An Lin" class="profile-photo">
             <h1>林俊安 / LIN CHUN AN</h1>
             <div class="subtitle">Lead Forward Deployed Engineer | AI Solutions Specialist</div>
             <div class="contact-info">
