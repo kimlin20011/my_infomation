@@ -241,14 +241,6 @@
             padding: 15px 20px;
             background: var(--light-bg);
             border-radius: 8px;
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-
-        .experience-item:hover, .education-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border-left-width: 5px;
         }
 
         .item-header {
@@ -301,14 +293,6 @@
             padding: 15px;
             border-radius: 8px;
             border-left: 4px solid var(--accent-color);
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(44, 90, 160, 0.15);
-            border-left-width: 6px;
         }
 
         .skill-category h4 {
@@ -351,14 +335,6 @@
             background: var(--light-bg);
             border-radius: 8px;
             border-left: 4px solid var(--accent-color);
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-
-        .certifications-list li:hover {
-            transform: translateX(8px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border-left-width: 6px;
         }
 
         .cert-title {
@@ -945,57 +921,61 @@
 
                 <div class="section">
                     <h2 class="section-title">🎓 学歴</h2>
-                    <table>
-                        <tr>
-                            <th>年月</th>
-                            <th>学歴</th>
-                        </tr>
-                        <tr>
-                            <td>平成26年（2014年）9月</td>
-                            <td>国立成功大学（台湾）システム・船舶メカトロニクス工学科 入学</td>
-                        </tr>
-                        <tr>
-                            <td>平成30年（2018年）6月</td>
-                            <td>同大学 同学科 卒業</td>
-                        </tr>
-                        <tr>
-                            <td>平成30年（2018年）9月</td>
-                            <td>国立政治大学大学院（台湾）コンピュータサイエンス専攻 修士課程 入学</td>
-                        </tr>
-                        <tr>
-                            <td>令和元年（2019年）10月</td>
-                            <td>金沢大学大学院 自然科学研究科 電子情報科学専攻 修士課程 入学</td>
-                        </tr>
-                        <tr>
-                            <td>令和4年（2022年）1月</td>
-                            <td>国立政治大学大学院（台湾）コンピュータサイエンス専攻 修士課程 修了</td>
-                        </tr>
-                        <tr>
-                            <td>令和4年（2022年）3月</td>
-                            <td>金沢大学大学院 自然科学研究科 電子情報科学専攻 修士課程 修了</td>
-                        </tr>
-                    </table>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">電子情報科学専攻 修士</div>
+                                <div class="item-company">金沢大学大学院 自然科学研究科 | 石川県、日本</div>
+                            </div>
+                            <div class="item-date">2019年10月 - 2022年3月</div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">コンピュータサイエンス専攻 修士</div>
+                                <div class="item-company">国立政治大学大学院 | 台北、台湾</div>
+                            </div>
+                            <div class="item-date">2018年9月 - 2022年1月</div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">システム・船舶メカトロニクス工学科 学士</div>
+                                <div class="item-company">国立成功大学 | 台南、台湾</div>
+                            </div>
+                            <div class="item-date">2014年9月 - 2018年6月</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="section">
                     <h2 class="section-title">🌐 語学力</h2>
-                    <table>
-                        <tr>
-                            <th>言語</th>
-                            <th>レベル</th>
-                        </tr>
-                        <tr>
-                            <td><strong>🇹🇼 中国語（北京語）</strong></td>
-                            <td>ネイティブレベル（母国語）</td>
-                        </tr>
-                        <tr>
-                            <td><strong>🇯🇵 日本語</strong></td>
-                            <td>ビジネスレベル（日本語能力試験N1）</td>
-                        </tr>
-                        <tr>
-                            <td><strong>🇺🇸 英語</strong></td>
-                            <td>ビジネスレベル（TOEIC 885点）</td>
-                        </tr>
+                    <table class="languages-table">
+                        <thead>
+                            <tr>
+                                <th>言語</th>
+                                <th>レベル</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>🇹🇼 中国語（北京語）</strong></td>
+                                <td>ネイティブレベル（母国語）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🇯🇵 日本語</strong></td>
+                                <td>ビジネスレベル（日本語能力試験N1）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🇺🇸 英語</strong></td>
+                                <td>ビジネスレベル（TOEIC 885点）</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
 
@@ -1023,20 +1003,16 @@
 
                 <div class="section">
                     <h2 class="section-title">📜 免許・資格</h2>
-                    <table>
-                        <tr>
-                            <th>年月</th>
-                            <th>資格名称</th>
-                        </tr>
-                        <tr>
-                            <td>令和元年（2019年）9月</td>
-                            <td>日本語能力試験 N1（最上級）</td>
-                        </tr>
-                        <tr>
-                            <td>平成29年（2017年）9月</td>
-                            <td>TOEIC Listening & Reading Test スコア 885点</td>
-                        </tr>
-                    </table>
+                    <ul class="certifications-list">
+                        <li>
+                            <div class="cert-title">日本語能力試験 N1（最上級）</div>
+                            <div class="cert-org">日本国際交流基金会・日本国際教育支援協会 | 2019年9月</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">TOEIC Listening & Reading Test スコア 885点</div>
+                            <div class="cert-org">ETS | 2017年9月</div>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="section">
