@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chun An Lin - Lead Forward Deployed Engineer | AI Solutions | Software Engineering">
+    <title>Chun An Lin - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #3d7cc9;
+            --accent-color: #5a9fd4;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Yu Gothic", "游ゴシック", "Hiragino Kaku Gothic Pro", "Meiryo", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .language-tabs {
+            display: flex;
+            justify-content: center;
+            background: var(--light-bg);
+            border-bottom: 2px solid var(--border-color);
+            padding: 0;
+        }
+
+        .language-tab {
+            padding: 15px 40px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .language-tab:hover {
+            background: rgba(44, 90, 160, 0.05);
+            color: var(--primary-color);
+        }
+
+        .language-tab.active {
+            color: var(--primary-color);
+            background: white;
+        }
+
+        .language-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .language-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .language-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .item-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .item-company {
+            font-size: 16px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .item-date {
+            font-size: 14px;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .item-content ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .item-content li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .skill-category {
+            background: var(--light-bg);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .languages-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .languages-table th,
+        .languages-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .languages-table th {
+            background: var(--light-bg);
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .languages-table tr:hover {
+            background: var(--light-bg);
+        }
+
+        .certifications-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .certifications-list li {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .cert-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .cert-org {
+            font-size: 14px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--light-bg);
+            color: #666;
+            font-size: 14px;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 90, 160, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .header .subtitle {
+                font-size: 16px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .language-tab {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .item-header {
+                flex-direction: column;
+            }
+
+            .print-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .language-tabs, .print-btn {
+                display: none;
+            }
+
+            .language-content {
+                display: block !important;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Japanese specific styles */
+        .lang-ja {
+            line-height: 1.8;
+        }
+
+        .lang-ja table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .lang-ja table th,
+        .lang-ja table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .lang-ja table th {
+            background: var(--light-bg);
+            font-weight: 600;
+            color: var(--primary-color);
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>林俊安 / LIN CHUN AN</h1>
+            <div class="subtitle">Lead Forward Deployed Engineer | AI Solutions Specialist</div>
+            <div class="contact-info">
+                <div class="contact-item">📍 Tokyo, Japan</div>
+                <div class="contact-item">🌐 Trilingual (Chinese, Japanese, English)</div>
+                <div class="contact-item">💼 <a href="https://www.linkedin.com/in/chun-an-lin-2a3998a5/" target="_blank" style="color: white; text-decoration: underline;">LinkedIn Profile</a></div>
+            </div>
+        </div>
+
+        <div class="language-tabs">
+            <button class="language-tab active" onclick="switchLanguage('en')">🇺🇸 English</button>
+            <button class="language-tab" onclick="switchLanguage('zh')">🇹🇼 中文</button>
+            <button class="language-tab" onclick="switchLanguage('ja')">🇯🇵 日本語</button>
+        </div>
+
+        <div class="content">
+            <!-- English Content -->
+            <div id="lang-en" class="language-content active">
+                <div class="section">
+                    <h2 class="section-title">🎯 Professional Summary</h2>
+                    <p><strong>Lead Forward Deployed Engineer</strong> with a strong background in software engineering, specializing in customer-facing enterprise AI solutions, client negotiation, and consulting. Expert in building AI agents using RAG (Retrieval-Augmented Generation), NL2SQL, and Python, leveraging low-code agent building platforms (Dify, AI Worker Platform) to enable natural language interactions with enterprise databases including BigQuery and Oracle ADB. Proven track record of leading teams of 6 engineers, managing multiple enterprise POC projects simultaneously, and delivering scalable, production-ready solutions for major companies across tourism, construction, food, pharmaceutical, and trading industries with high client satisfaction.</p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">💼 Work Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Lead Forward Deployed Engineer</div>
+                                <div class="item-company">CyberAgent, Inc. (AI SHIFT) | Tokyo, Japan</div>
+                            </div>
+                            <div class="item-date">February 2025 - Present</div>
+                        </div>
+                        <div class="item-content">
+                            <ul>
+                                <li>Lead a team of 6 engineers (including Okinawa-based operations team), directly handling client negotiations and providing generative AI implementation support to enterprise clients in tourism, construction, food, pharmaceutical, and trading industries</li>
+                                <li>Build AI agents using RAG, NL2SQL, and comprehensive data preparation, developing Python-based solutions leveraging low-code agent building platforms (Dify, AI Worker Platform) to enable natural language interactions with enterprise databases including BigQuery and Oracle ADB</li>
+                                <li>Analyze enterprise customer databases and design NL2SQL AI agents using Oracle SelectAI technology, reducing manual SQL writing workload in data collection processes</li>
+                                <li>Provide strategic consulting on AI adoption for major enterprises, translating complex business requirements into technical specifications</li>
+                                <li>Manage multiple enterprise POC projects simultaneously using agile methodologies, regularly reporting POC accuracy metrics to clients</li>
+                                <li>Serve as Product Manager for AI Worker Platform (company's AI SaaS platform), bridging customer needs with development priorities</li>
+                                <li>Conduct technical research and develop prototypes for APIs (Microsoft, Salesforce, etc.) integrated with AI Worker Platform</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Software Engineer</div>
+                                <div class="item-company">GMO Internet Group, Inc. | Tokyo, Japan</div>
+                            </div>
+                            <div class="item-date">October 2022 - December 2024</div>
+                        </div>
+                        <div class="item-content">
+                            <ul>
+                                <li>Developed and maintained a full-stack NFT marketplace, handling complex transaction flows and ensuring system reliability for high-volume user traffic</li>
+                                <li>Designed and implemented secure blockchain smart contracts, solving technical challenges in digital asset exchange operations</li>
+                                <li>Built scalable AI applications using AWS, Nest.js, and Next.js, focusing on performance optimization and enterprise-grade user experience</li>
+                                <li>Architected and deployed web services using AWS serverless services, designing systems capable of handling traffic from tens of thousands of concurrent users</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Military Service</div>
+                                <div class="item-company">Republic of China Navy</div>
+                            </div>
+                            <div class="item-date">April 2022 - September 2022</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🎓 Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Master of Science in Electronics and Information Science and Engineering</div>
+                                <div class="item-company">Kanazawa University | Ishikawa, Japan</div>
+                            </div>
+                            <div class="item-date">October 2019 - March 2022</div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Master of Science in Computer Science</div>
+                                <div class="item-company">National Chengchi University | Taipei, Taiwan</div>
+                            </div>
+                            <div class="item-date">September 2018 - January 2022</div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Bachelor of Science in Systems and Naval Mechatronic Engineering</div>
+                                <div class="item-company">National Cheng Kung University | Tainan, Taiwan</div>
+                            </div>
+                            <div class="item-date">September 2014 - June 2018</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🌐 Languages</h2>
+                    <table class="languages-table">
+                        <thead>
+                            <tr>
+                                <th>Language</th>
+                                <th>Proficiency Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>🇹🇼 Chinese (Mandarin)</strong></td>
+                                <td>Native</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🇯🇵 Japanese</strong></td>
+                                <td>Business Level (JLPT N1)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🇺🇸 English</strong></td>
+                                <td>Business Level (TOEIC 885)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">💻 Core Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>AI & Data</h4>
+                            <p>RAG, NL2SQL, AI Agent Development, Low-Code Platforms (Dify, AI Worker Platform), BigQuery, Oracle ADB</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Backend & Cloud</h4>
+                            <p>Python, Node.js, TypeScript, AWS (Lambda, DynamoDB, S3), Nest.js</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Frontend & Web</h4>
+                            <p>Next.js, React, TypeScript, Responsive Design</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Business & Leadership</h4>
+                            <p>Client Negotiation, Consulting, Team Leadership, Agile Project Management, Enterprise Solution Architecture</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">📜 Certifications</h2>
+                    <ul class="certifications-list">
+                        <li>
+                            <div class="cert-title">Japanese Language Proficiency Test N1</div>
+                            <div class="cert-org">Japan Foundation and Japan Educational Exchanges and Services | September 2019</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">TOEIC Listening & Reading Test Score: 885</div>
+                            <div class="cert-org">ETS | September 2017</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">📚 Publications</h2>
+                    <ul class="certifications-list">
+                        <li>
+                            <div class="cert-title">User-Managed Access Delegation for Blockchain-driven IoT Services</div>
+                            <div class="cert-org">International Computer Symposium 2020 / IEEE | January 2020</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">Design Patterns for Blockchain-assisted Accountable Data Dissemination between IoT Devices and Edge Server</div>
+                            <div class="cert-org">AsianPLoP 2020: 9th Asian Conference on Pattern Languages of Programs / ACM Digital Library | January 2020</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🏆 Awards</h2>
+                    <ul class="certifications-list">
+                        <li>
+                            <div class="cert-title">Best Paper Award</div>
+                            <div class="cert-org">Taiwan Conference on Software Engineering (TCSE 2019) | July 2019</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">The Phi Tau Phi Scholastic Honor Society</div>
+                            <div class="cert-org">The Phi Tau Phi Scholastic Honor Society of the Republic of China | June 2020</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Chinese Content -->
+            <div id="lang-zh" class="language-content">
+                <div class="section">
+                    <h2 class="section-title">🎯 專業摘要</h2>
+                    <p><strong>首席前沿部署工程師</strong>，具有深厚的軟體工程背景，專精於企業級AI解決方案客戶對接、客戶協商與諮詢服務。擅長使用RAG（檢索增強生成）、NL2SQL和Python開發AI代理，運用低程式碼代理建構平台（Dify、AI Worker Platform）實現與企業資料庫（包括BigQuery和Oracle ADB）的自然語言互動。具有領導6名工程師團隊、同時管理多個企業POC專案的實績，為旅遊、建築、食品、製藥和貿易等多個產業的大型企業提供可擴展的生產級解決方案，獲得客戶高度滿意。</p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">💼 工作經歷</h2>
+                    
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">首席前沿部署工程師</div>
+                                <div class="item-company">CyberAgent股份有限公司（AI SHIFT子公司）| 東京，日本</div>
+                            </div>
+                            <div class="item-date">2025年2月 - 至今</div>
+                        </div>
+                        <div class="item-content">
+                            <ul>
+                                <li>領導6名工程師團隊（包含沖繩營運團隊），直接負責客戶協商，為旅遊、建築、食品、製藥和貿易行業的企業客戶提供生成式AI實施支援</li>
+                                <li>使用RAG、NL2SQL進行AI代理開發，運用低程式碼平台（Dify、AI Worker Platform）建立Python解決方案，實現與BigQuery和Oracle ADB等企業資料庫的自然語言互動</li>
+                                <li>分析企業客戶資料庫，使用Oracle SelectAI技術設計NL2SQL AI代理，大幅降低資料收集過程中的手動SQL撰寫工作量</li>
+                                <li>為大型企業提供AI導入策略諮詢，將複雜的業務需求轉化為技術規格</li>
+                                <li>採用敏捷方法論同時管理多個企業POC專案，定期向客戶報告POC準確率指標</li>
+                                <li>擔任AI Worker Platform（公司AI SaaS平台）的產品經理，連接客戶需求與開發優先順序</li>
+                                <li>進行技術研究並開發API原型（Microsoft、Salesforce等）與AI Worker Platform整合</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">軟體工程師</div>
+                                <div class="item-company">GMO Internet Group股份有限公司 | 東京，日本</div>
+                            </div>
+                            <div class="item-date">2022年10月 - 2024年12月</div>
+                        </div>
+                        <div class="item-content">
+                            <ul>
+                                <li>開發和維護全端NFT市場平台，處理複雜交易流程並確保高流量下的系統可靠性</li>
+                                <li>設計並實現安全的區塊鏈智能合約，解決數位資產交換操作中的技術挑戰</li>
+                                <li>使用AWS、Nest.js和Next.js建構可擴展的AI應用，專注於效能優化和企業級使用者體驗</li>
+                                <li>使用AWS無伺服器服務架構和部署網路服務，設計能夠處理數萬名並行使用者流量的系統</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">義務兵役</div>
+                                <div class="item-company">中華民國海軍</div>
+                            </div>
+                            <div class="item-date">2022年4月 - 2022年9月</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🎓 教育背景</h2>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">電子資訊科學與工程碩士</div>
+                                <div class="item-company">金澤大學 | 石川縣，日本</div>
+                            </div>
+                            <div class="item-date">2019年10月 - 2022年3月</div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">資訊科學碩士</div>
+                                <div class="item-company">國立政治大學 | 台北，台灣</div>
+                            </div>
+                            <div class="item-date">2018年9月 - 2022年1月</div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">系統與船舶機電工程學士</div>
+                                <div class="item-company">國立成功大學 | 台南，台灣</div>
+                            </div>
+                            <div class="item-date">2014年9月 - 2018年6月</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🌐 語言能力</h2>
+                    <table class="languages-table">
+                        <thead>
+                            <tr>
+                                <th>語言</th>
+                                <th>程度</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>🇹🇼 中文（國語）</strong></td>
+                                <td>母語</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🇯🇵 日語</strong></td>
+                                <td>商務級別（日本語能力試驗N1）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🇺🇸 英語</strong></td>
+                                <td>商務級別（TOEIC 885分）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">💻 核心技能</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>AI與資料</h4>
+                            <p>RAG、NL2SQL、AI代理開發、低程式碼平台（Dify、AI Worker Platform）、BigQuery、Oracle ADB</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>後端與雲端</h4>
+                            <p>Python、Node.js、TypeScript、AWS（Lambda、DynamoDB、S3）、Nest.js</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>前端與網頁</h4>
+                            <p>Next.js、React、TypeScript、響應式設計</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>商務與領導</h4>
+                            <p>客戶協商、諮詢服務、團隊領導、敏捷專案管理、企業解決方案架構</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">📜 專業證照</h2>
+                    <ul class="certifications-list">
+                        <li>
+                            <div class="cert-title">日本語能力試驗N1（最高級）</div>
+                            <div class="cert-org">日本國際交流基金會 | 2019年9月</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">TOEIC聽力與閱讀測驗分數：885分</div>
+                            <div class="cert-org">ETS | 2017年9月</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">📚 學術論文</h2>
+                    <ul class="certifications-list">
+                        <li>
+                            <div class="cert-title">區塊鏈驅動物聯網服務的使用者管理存取委派</div>
+                            <div class="cert-org">國際電腦研討會 2020 / IEEE | 2020年1月</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">區塊鏈輔助物聯網裝置與邊緣伺服器間可問責資料傳播的設計模式</div>
+                            <div class="cert-org">AsianPLoP 2020：第九屆亞洲程式語言模式會議 / ACM數位圖書館 | 2020年1月</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🏆 獲獎紀錄</h2>
+                    <ul class="certifications-list">
+                        <li>
+                            <div class="cert-title">最佳論文獎</div>
+                            <div class="cert-org">台灣軟體工程研討會（TCSE 2019）| 2019年7月</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">斐陶斐榮譽學會會員</div>
+                            <div class="cert-org">中華民國斐陶斐榮譽學會 | 2020年6月</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Japanese Content -->
+            <div id="lang-ja" class="language-content lang-ja">
+                <div class="section">
+                    <h2 class="section-title">💼 職歴</h2>
+                    
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Lead Forward Deployed Engineer</div>
+                                <div class="item-company">株式会社サイバーエージェント（子会社株式会社AI SHIFT）| 東京</div>
+                            </div>
+                            <div class="item-date">2025年2月 - 現在</div>
+                        </div>
+                        <div class="item-content">
+                            <ul>
+                                <li>6名のエンジニアチーム（沖縄のオペレーションチームを含む）をリード、観光、建設、食品、医薬品、商社等の企業顧客への生成AI実装支援と直接的な顧客折衝を担当</li>
+                                <li>RAG、NL2SQLを活用したAIエージェント開発、低コードプラットフォーム（Dify、AI Worker Platform）を用いたPythonベースのソリューション開発により、BigQueryやOracle ADB等の企業データベースとの自然言語対話を実現</li>
+                                <li>企業顧客のデータベースを分析し、Oracle SelectAI技術を用いたNL2SQL AIエージェントを設計、データ収集プロセスにおける手動SQLライティング工数を大幅削減</li>
+                                <li>大手企業へのAI導入に関する戦略的コンサルティングを提供し、複雑なビジネス要件を技術仕様に変換</li>
+                                <li>アジャイル手法を用いて複数の企業POCプロジェクトを同時管理、定期的にPOC精度指標を顧客に報告</li>
+                                <li>AI Worker Platform（自社AI SaaSプラットフォーム）のプロダクトマネージャーとして、顧客ニーズと開発優先順位を橋渡し</li>
+                                <li>AI Worker Platformと統合するAPI（Microsoft、Salesforce等）の技術調査とプロトタイプ開発を実施</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">ソフトウェアエンジニア</div>
+                                <div class="item-company">GMOインターネットグループ株式会社 | 東京</div>
+                            </div>
+                            <div class="item-date">2022年10月 - 2024年12月</div>
+                        </div>
+                        <div class="item-content">
+                            <ul>
+                                <li>フルスタックNFTマーケットプレイスの開発・保守、複雑なトランザクションフローの処理と高トラフィック下でのシステム信頼性確保</li>
+                                <li>セキュアなブロックチェーンスマートコントラクトの設計・実装、デジタル資産交換における技術課題の解決</li>
+                                <li>AWS、Nest.js、Next.jsを用いたスケーラブルなAIアプリケーション構築、パフォーマンス最適化とエンタープライズグレードのユーザー体験に注力</li>
+                                <li>AWSサーバーレスサービスを用いたWebサービスのアーキテクチャ設計・デプロイ、数万人の同時ユーザートラフィックに対応可能なシステムを設計</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">義務兵役</div>
+                                <div class="item-company">中華民国海軍</div>
+                            </div>
+                            <div class="item-date">2022年4月 - 2022年9月</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🎓 学歴</h2>
+                    <table>
+                        <tr>
+                            <th>年月</th>
+                            <th>学歴</th>
+                        </tr>
+                        <tr>
+                            <td>平成26年（2014年）9月</td>
+                            <td>国立成功大学（台湾）システム・船舶メカトロニクス工学科 入学</td>
+                        </tr>
+                        <tr>
+                            <td>平成30年（2018年）6月</td>
+                            <td>同大学 同学科 卒業</td>
+                        </tr>
+                        <tr>
+                            <td>平成30年（2018年）9月</td>
+                            <td>国立政治大学大学院（台湾）コンピュータサイエンス専攻 修士課程 入学</td>
+                        </tr>
+                        <tr>
+                            <td>令和元年（2019年）10月</td>
+                            <td>金沢大学大学院 自然科学研究科 電子情報科学専攻 修士課程 入学</td>
+                        </tr>
+                        <tr>
+                            <td>令和4年（2022年）1月</td>
+                            <td>国立政治大学大学院（台湾）コンピュータサイエンス専攻 修士課程 修了</td>
+                        </tr>
+                        <tr>
+                            <td>令和4年（2022年）3月</td>
+                            <td>金沢大学大学院 自然科学研究科 電子情報科学専攻 修士課程 修了</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🌐 語学力</h2>
+                    <table>
+                        <tr>
+                            <th>言語</th>
+                            <th>レベル</th>
+                        </tr>
+                        <tr>
+                            <td><strong>🇹🇼 中国語（北京語）</strong></td>
+                            <td>ネイティブレベル（母国語）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇯🇵 日本語</strong></td>
+                            <td>ビジネスレベル（日本語能力試験N1）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇺🇸 英語</strong></td>
+                            <td>ビジネスレベル（TOEIC 885点）</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">💻 コアスキル</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>AI・データ</h4>
+                            <p>RAG、NL2SQL、AIエージェント開発、低コードプラットフォーム（Dify、AI Worker Platform）、BigQuery、Oracle ADB</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>バックエンド・クラウド</h4>
+                            <p>Python、Node.js、TypeScript、AWS（Lambda、DynamoDB、S3）、Nest.js</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>フロントエンド・Web</h4>
+                            <p>Next.js、React、TypeScript、レスポンシブデザイン</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>ビジネス・リーダーシップ</h4>
+                            <p>顧客折衝、コンサルティング、チームリーダーシップ、アジャイルプロジェクト管理、エンタープライズソリューションアーキテクチャ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">📜 免許・資格</h2>
+                    <table>
+                        <tr>
+                            <th>年月</th>
+                            <th>資格名称</th>
+                        </tr>
+                        <tr>
+                            <td>令和元年（2019年）9月</td>
+                            <td>日本語能力試験 N1（最上級）</td>
+                        </tr>
+                        <tr>
+                            <td>平成29年（2017年）9月</td>
+                            <td>TOEIC Listening & Reading Test スコア 885点</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">📚 学術論文</h2>
+                    <ul class="certifications-list">
+                        <li>
+                            <div class="cert-title">User-Managed Access Delegation for Blockchain-driven IoT Services</div>
+                            <div class="cert-org">International Computer Symposium 2020 / IEEE | 2020年1月</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">Design Patterns for Blockchain-assisted Accountable Data Dissemination between IoT Devices and Edge Server</div>
+                            <div class="cert-org">AsianPLoP 2020: 9th Asian Conference on Pattern Languages of Programs / ACM Digital Library | 2020年1月</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🏆 受賞歴</h2>
+                    <ul class="certifications-list">
+                        <li>
+                            <div class="cert-title">Best Paper Award</div>
+                            <div class="cert-org">Taiwan Conference on Software Engineering (TCSE 2019) | 2019年7月</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">The Phi Tau Phi Scholastic Honor Society</div>
+                            <div class="cert-org">The Phi Tau Phi Scholastic Honor Society of the Republic of China | 2020年6月</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Last Updated: January 2026</p>
+            <p>© 2026 Chun An Lin. All rights reserved.</p>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Print / PDF</button>
+
+    <script>
+        function switchLanguage(lang) {
+            // Hide all language contents
+            document.querySelectorAll('.language-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.language-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected language content
+            document.getElementById('lang-' + lang).classList.add('active');
+            
+            // Add active class to selected tab
+            event.target.classList.add('active');
+            
+            // Update page language attribute
+            document.documentElement.lang = lang === 'en' ? 'en' : lang === 'zh' ? 'zh-TW' : 'ja';
+        }
+    </script>
+</body>
+</html>
+
